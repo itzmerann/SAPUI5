@@ -1,12 +1,13 @@
 sap.ui.define([
     "projectmodule/controller/BaseController",
     "sap/m/MessageBox",
-    "projectmodule/model/models"
+    "projectmodule/model/models",
+    "projectmodule/util/FormatterUtil"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, MessageBox, modelutil) {
+    function (Controller, MessageBox, modelutil,FormatterUtil) {
         "use strict";
 
         return Controller.extend("projectmodule.controller.View", {
@@ -24,8 +25,12 @@ sap.ui.define([
                 this.getView().byId("mytextid2").bindValue("/empData/0/name")
                 this.getView().byId("mytextid3").bindProperty("value","/empData/0/salary")
 
+                //Bind First element on screen land
+                this.getView().byId("elemyForm").bindElement("/empData/0")
+
             },
             addresss:"",
+            formatter:FormatterUtil,
             
             onBeforeRendering: function(){
                console.log("befor render")
@@ -95,6 +100,8 @@ sap.ui.define([
             rowSelectionChangeEvent: function(event){
                 console.log(event.getParameters().rowContext.getProperty()) //fetch the selected row
                 console.log(event.getParameters().rowContext.getPath()) //fetch the selected row    
+                console.log(event.getParameter("rowContext").getPath()) //fetch the selected row    
+
                 
                 //Element Binding...looks for arg path in model and bind with gn element 
                 this.getView().byId("elemyForm").bindElement(event.getParameters().rowContext.getPath())
@@ -105,6 +112,10 @@ sap.ui.define([
 
                 console.log(event.getParameters().selectedItem.getKey())
 
+            },
+            handleLiveChange: function (oEvent) {
+                var sValue = oEvent.getParameter("value");
+                this.byId("getValue").setText(sValue);
             }
 
         });

@@ -99,7 +99,26 @@
     <Input id="elemytextid2" value="{name}"></Input>
 
     <Label id= "elemylabel3" text="Emp Sal"></Label>
-    <Input id="elemytextid3" value="{salary}"></Input>
+    <Input id="elemytextid3" value="{path:'salary' , formatter: '.formatter.formatCurreny'}"></Input>
+
+     <!-- Formatter  -->
+    <Label id= "Formatter" text="Formatter name + id"></Label>
+    <Input id="Formatterid" value="{parts:[{path:'id'}, {path:'name'}],
+                                    formatter: '.formatter.concatValues' }" ></Input> 
+  
+
+    <!-- When gn binding is not there in model it wont throw any error and when we set value to it in UI, it will create the prop in model and set the prop -->
+    <Label id="live" text="ValueLiveUpdate"/>
+		<Switch id="lived" state="{/ValueLiveUpdate}"/>
+		<Label id="lives" text="Type here"/>
+		<TextArea id="TypeHere"
+			value="{/InputValue}"
+			valueLiveUpdate="{/ValueLiveUpdate}"
+			liveChange="handleLiveChange"/>
+		<Label id="livess" text="input.getValue()"/>
+		<Text id="getValue" text=""/>
+		<Label id="livessa" text="model.getProperty()"/>
+		<Text id="getProperty" text="{/InputValue}"/>
     </fm:SimpleForm>
 
    <fm:SimpleForm  visible="true" width="50%" id="myForm" editable="{/disabletag}">
