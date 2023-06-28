@@ -1,0 +1,9 @@
+<mvc:View controllerName="MyFirstApp.controller.jscontroller"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <App id="app">
+    
+    </App>
+    <Button id="1234" press="OnPress()">NewButton</Button>
+</mvc:View>

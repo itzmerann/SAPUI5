@@ -1,0 +1,182 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" id="myViewId" controllerName="projectmodule.controller.View"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="false"
+    xmlns="sap.m"
+    xmlns:fm ="sap.ui.layout.form">
+
+	<Page id="vbcvb"
+		showHeader="false"
+		enableScrolling="true"
+		class="sapUiContentPadding">
+		<content>
+    <table:Table id="emptable" rows="{/empData}" selectionMode="MultiToggle" rowSelectionChange="rowSelectionChangeEvent" visibleRowCount="2" alternateRowColors="true" >
+    <table:extension>
+    <Toolbar id="tool">
+    <Button id="delet" icon="sap-icon://delete"></Button>
+    </Toolbar>
+    </table:extension>
+    <table:columns>
+
+    <table:Column id="col1">
+    <Label id="empid" text="Emp ID"></Label>
+    <table:template>
+    <Text id="emp" text="{id}"></Text>
+    </table:template>
+    </table:Column>
+
+    <table:Column id="col2">
+    <Label id="empname" text="Emp Name"></Label>
+    <table:template>
+    <Text id="empname1" text="{name}"></Text>
+    </table:template>
+    </table:Column>
+
+    <table:Column id="col3">
+    <Label id="salary" text="Emp Salary"></Label>
+    <table:template>
+    <Text id="sal" text="{salary}"></Text>
+    </table:template>
+    </table:Column>
+
+    <table:Column id="col4">
+    <Label id="percent" text="Emp percent"></Label>
+    <table:template>
+    <Text id="percentq" text="{percent}"></Text>
+    </table:template>
+    </table:Column>
+
+    <table:Column id="col5">
+    <Label id="gender" text="Gender"></Label>
+    <table:template>
+    <Image id="imd" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Female-icon-2.png" width="30px"></Image>
+    </table:template>
+    </table:Column>
+
+    <table:Column id="col6">
+    <Label id="peredit" text="Edit Percent"></Label>
+    <table:template>
+    <Input id="percenty" value="{percent}"></Input>
+    </table:template>
+    </table:Column>
+
+    <table:Column id="col7">
+    <Label id="items" text="Emp Type"></Label>
+    <table:template>
+    <ComboBox id="oo" items="{Type}" selectedKey="{KempType}" selectionChange="comboChange"><core:Item id="nn" key="{empType}" text="{empType}"></core:Item></ComboBox>
+    </table:template>
+    </table:Column>
+
+    <table:Column id="col8">
+    <Label id="items2" text="Gender"></Label>
+    <table:template>
+    <SelectList id="ges" selectedKey="{gender}">
+    <items>
+    <core:Item id="ma" key="M" text="Male"></core:Item>
+    <core:Item id="fe" key="F" text="Female"></core:Item>
+    </items>
+    </SelectList>
+    </table:template>
+    </table:Column>
+
+    <table:Column id="col9">
+    <Label id="rating" text="Emp rating"></Label>
+    <table:template>
+    <RatingIndicator id="rat" value="{rating}"></RatingIndicator>
+    </table:template>
+    </table:Column>
+
+
+    </table:columns>
+    </table:Table>
+
+
+    <!-- Element Binding..value prop mandatory -->
+   <fm:SimpleForm  visible="true" width="50%" id="elemyForm">
+   <Title id="Eletile" text="Emp Data Element"></Title>
+    <Label id= "elemylabel1" text="Emp ID"></Label>
+    <Input id="elemytextid1" value="{id}" editable="{/disabletag}"></Input>
+
+    <Label id= "elemylabel2" text="Emp Name"></Label>
+    <Input id="elemytextid2" value="{name}"></Input>
+
+    <Label id= "elemylabel3" text="Emp Sal"></Label>
+    <Input id="elemytextid3" value="{salary}"></Input>
+    </fm:SimpleForm>
+
+   <fm:SimpleForm  visible="true" width="50%" id="myForm" editable="{/disabletag}">
+   <Title id="tile" text="Emp Data"></Title>
+
+   <!-- Binding Syntax -->
+    <Label id= "mylabel1" text="Emp ID"></Label>
+    <Input id="mytextid1" value="{path : '/empData/0/id'}" editable="{/disabletag}"></Input>
+
+    <Label id= "mylabel2" text="Emp Name"></Label>
+    <!-- <Input id="mytextid2" value="{/empData/0/name}"></Input> -->
+    <Input id="mytextid2" ></Input>
+
+    <Label id= "mylabel3" text="Emp Sal"></Label>
+    <!-- <Input id="mytextid3" value="{/empData/0/salary}"></Input> -->
+    <Input id="mytextid3"></Input>
+
+
+
+
+
+    <Label id= "mylabel5" text="Emp percent"></Label>
+    <Input id="mytextid5" value="{/empData/0/percent}"></Input>  
+
+    <Label id= "disableField" text="Name Disabled"></Label>
+    <Input id="disable1"  enabled="{= ${/empData/0/id} === '1007'}"></Input> 
+     
+    <!-- Need to specify complex binding type  -->
+    <Label id= "complex" text="Complex Binding"></Label>
+    <Input id="complexbindid" value="{/empData/0/id} {/empData/0/name}" ></Input> 
+    
+    <!-- Expression binding -->
+    <Label id= "mylabel6" text="Emp percent + Rating"></Label>
+    <Input id="mytextid6" value="{= ${/empData/0/percent}>87 ? 'High':'Medium'}"></Input>
+
+    <!-- Access multiple models using  -->
+    <Label id= "mylabel59" text="Mock 2 Emp percent"></Label>
+    <Input id= "mytextid58" value="{mock2>/empData/0/percent}"></Input> 
+    
+    <Button id="mybuttonid" press="disableDetails" text="disableDetails"></Button>
+
+    <Button id="mybutflipid" press="flipDetails" text="flipDetails"></Button>
+    </fm:SimpleForm>
+
+		</content>
+	</Page>
+
+
+
+
+
+
+
+
+
+    <!-- <Page id ="mypageid" title="my title" enableScrolling="true" backgroundDesign="Standard" titleAlignment="Auto">
+    <Label id= "mylabel" text="My Input Outside Form"></Label>
+    <Input id="mytextid2" fieldWidth="20%" type="Text" editable="true" name="MyInput" value="Initial value"></Input>
+    <fm:SimpleForm visible="true" layout="ColumnLayout" id="myForm" adjustLabelSpan="true" editable="true">
+    <fm:content >
+    <Label id= "mylabel1" text="My Input 1"></Label>
+    <Input id="mytextid" name="MyInput"></Input>
+    <Label id= "mylabel2" text="My Input 2"></Label>
+    <Input id="mytextid3" name="MyInput"></Input>
+    <Label id= "mylabel3" text="My Input 3"></Label>
+    <Input id="mytextid4" name="MyInput"></Input>
+    <Label id= "mylabel4" text="My Input 4"></Label>
+    <Input id="mytextid5" fieldWidth="20%" type="Text" editable="true" name="MyInput"></Input> 
+    <Label id= "mylabel5" text="My Button"></Label>
+    <Button id="mybuttonid" press="OnPress" text="my button"></Button>
+    </fm:content>
+    </fm:SimpleForm>
+    </Page> 
+    -->
+
+</mvc:View>
+
+
+    
+
