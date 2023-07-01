@@ -22,6 +22,7 @@
                 
                 </IconTabFilter>
                 <IconTabFilter key="SU" text="Suppliers" icon="sap-icon://supplier">
+                <!-- As this extends ListBase we can add prop of that like select mode -->
                     <Table itemPress="onItemPress" items="{/suppliers}">
                         <columns>
                             <Column>
@@ -73,3 +74,26 @@
         </footer>
     </Page>
 </mvc:View>
+
+  <!-- sapu.ui.Table  --Every column we will exppalin using template aggregation -->
+<!-- <table:Table id="emptable" rows="{/empData}" selectionMode="MultiToggle" rowSelectionChange="rowSelectionChangeEvent" visibleRowCount="2" alternateRowColors="true" >
+    <table:extension>
+    <Toolbar id="tool">
+    <Button id="delet" icon="sap-icon://delete"></Button>
+    </Toolbar>
+    </table:extension>
+    <table:columns>
+
+    <table:Column id="col1">
+    <Label id="empid" text="Emp ID"></Label>
+    <table:template>
+    <Text id="emp" text="{id}"></Text>
+    </table:template>
+    </table:Column>
+
+    <table:Column id="col2">
+    <Label id="empname" text="Emp Name"></Label>
+    <table:template>
+    <Text id="empname1" text="{name}"></Text>
+    </table:template>
+    </table:Column> -->
