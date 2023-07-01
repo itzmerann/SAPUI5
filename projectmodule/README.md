@@ -1,4 +1,4 @@
-## Application Details
+## Application Details --Has lesson consepts upto lesson 19
 |               |
 | ------------- |
 |**Generation Date and Time**<br>Thu Jun 22 2023 03:03:22 GMT+0000 (Coordinated Universal Time)|
