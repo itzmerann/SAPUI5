@@ -55,21 +55,21 @@
         "routing":{
             "config":{
                 "routerClass": "sap.m.routing.Router",
-                "viewPath": "emc.fin.ar.view",
-                "viewType": "XML",
-                "controlId": "idAppCon"
+                "viewPath": "emc.fin.ar.view",  //folder struct where all views are present
+                "viewType": "XML", 
+                "controlId": "idAppCon" //The root/parent view app container id on which the custom views will be placed
             },
             "routes": [
                 {
-                    "pattern": "",
-                    "name": "start",
-                    "target":["master", "empty"]
+                    "pattern": "", //EndPoint...Empty pattern like home page..when this endpoint is hit then the target views are initialized
+                    "name": "start", //name we need to use on navTo in controller
+                    "target":["master", "empty"] //Will look for this name in targets for the view details
                 }
             ],
             "targets": {
                 "master":{
-                    "viewName": "View1",
-                    "controlAggregation": "masterPages",
+                    "viewName": "View1",  //Name in folder structure
+                    "controlAggregation": "masterPages", //As App container is default view, this means place this view by calling masterPages function on root app view 
                     "viewId": "idView1"
                 },
                 "empty":{
