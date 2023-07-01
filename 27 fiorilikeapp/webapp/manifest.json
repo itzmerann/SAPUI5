@@ -65,8 +65,9 @@
                     "name": "start",
                     "target":["master", "empty"]
                 },
+                //Every Url is new root..when we select back after clicking 10 fruits it will go to fruit 9,8,7,..as each one is diff url root
                 {
-                    "pattern": "myfruits/{fruitId}",
+                    "pattern": "myfruits/{fruitId}", //when calling nave to we need to populate fruitId
                     "name": "detail",
                     "target":["master", "modi"]
                 },

@@ -7,10 +7,14 @@ sap.ui.define([
     return BaseController.extend("emc.fin.ar.controller.View2",{
         onInit: function(){
             this.oRouter = this.getOwnerComponent().getRouter();
-            //We need a method which is triggered EVERYTIME route changes
+
+            //To achieve binding of path to View2 to fetch the elements
+            //We need a method which is triggered EVERYTIME route changes so that we can get the index from path var and get the model and bind it to this view
+            //Whenever the detail route changes the attachMatched method will be called with the event
             this.oRouter.getRoute("detail").attachMatched(this.herculis, this);
         },
         herculis: function(oEvent){
+            //fruitId is the path var in the url
             var sPath = "/fruits/" + oEvent.getParameter("arguments").fruitId;
             MessageToast.show("Herculis is called Path is : " + sPath);
             this.getView().bindElement(sPath);
