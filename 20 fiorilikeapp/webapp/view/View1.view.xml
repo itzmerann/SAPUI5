@@ -1,0 +1,6 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+          controllerName="emc.fin.ar.controller.View1">
+    <Page title="View 1">
+        <Button press="onNext" text="Go to Next" />
+    </Page>
+</mvc:View>
