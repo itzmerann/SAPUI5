@@ -1,0 +1,45 @@
+{
+    "disabletag":true,
+    "empData":[
+        {
+            "id":"1001",
+            "name":"ranMoc",
+            "salary":"200 USD",
+            "percent":87,
+            "KempType":"",
+            "Type":[
+                {"keyy":"F","empType":"full"},
+                {"keyy":"H","empType" :"half"}
+            ],
+            "gender":"M"  ,
+            "rating":1      
+        },
+        {
+            "id":"1002",
+            "name":"ranMoc2",
+            "salary":"300 USD",
+            "percent":89,
+            "KempType":"",
+            "Type":[
+                {"keyy":"F","empType":"full"},
+                {"keyy":"H","empType" :"half"}
+            ],
+             "gender":"F",
+             "rating":2
+
+        },
+        {
+            "id":"1003",
+            "name":"ranMoc3",
+            "salary":"400 USD",
+            "percent":97,
+            "KempType":"",
+            "Type":[
+                {"keyy":"F","empType":"full"},
+                {"keyy":"H","empType" :"half"}
+            ],
+            "gender":"M",
+            "rating":3
+        }
+    ]
+}

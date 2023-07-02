@@ -1,0 +1,26 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+          controllerName="emc.fin.ar.controller.View1">
+    <Page title="View 1">
+        <headerContent>
+            <Button icon="sap-icon://action" press="onNext" />
+        </headerContent>
+        <content>
+            <!-- <Button press="onNext" text="Go to Next" /> -->
+            <SearchField id="idSearch"></SearchField>
+            <List id="idList" items="{/fruits}">
+                <items>
+                <!-- Use of formatter to manuplate the value during runtime -->
+                    <ObjectListItem intro="{type}" title="{name}" icon="sap-icon://product" 
+                                    number="{price}" numberUnit="{unit}">
+                        <firstStatus>
+                            <ObjectStatus text="{availability}" state="{
+                                    path: 'availability',
+                                    formatter: '.formatter.getStatusText'
+                                }"></ObjectStatus>
+                        </firstStatus>
+                    </ObjectListItem>
+                 </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

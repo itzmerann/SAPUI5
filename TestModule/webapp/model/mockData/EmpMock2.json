@@ -1,0 +1,26 @@
+{
+    "disabletag":true,
+    "empData":[
+        {
+            "id":"1-1001",
+            "name":"Mock22",
+            "salary":"200 INR",
+            "percent":90,
+            "Type":["Full","Half"]
+        },
+        {
+            "id":"2-1002",
+            "name":"Mock22ranMoc2",
+            "salary":"300 INR",
+            "percent":89
+
+        },
+        {
+            "id":"3-1003",
+            "name":"Mock22ranMoc3",
+            "salary":"400 INR",
+            "percent":97
+
+        }
+    ]
+}

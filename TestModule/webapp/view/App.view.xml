@@ -1,0 +1,9 @@
+<mvc:View controllerName="projectmodule.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="false"
+    xmlns="sap.m">
+    <App id="App">
+
+
+        </App>
+</mvc:View>

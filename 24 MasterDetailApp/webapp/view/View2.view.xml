@@ -1,0 +1,22 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+          controllerName="emc.fin.ar.controller.View2">
+    <Page title="View 2" showNavButton="true" navButtonPress="onBack" >
+<!-- Using Object Header we can display multiplecontent -->
+        <ObjectHeader intro="{healthBenefit}" title="{name}" number="{price}"
+                      numberUnit="{currency}" icon="{imageURL}"
+         ></ObjectHeader>
+        <!-- <Button press="onBack" text="Go Back" /> -->
+        <!-- <List id="idList2" mode="MultiSelect" items="{
+                path: '/selectedFruits'
+            }">
+                <items>
+                    <ObjectListItem intro="{type}" title="{name}" icon="{imageURL}" 
+                                    number="{price}" numberUnit="{currency}">
+                        <firstStatus>
+                            <ObjectStatus text="{status}"></ObjectStatus>
+                        </firstStatus>
+                    </ObjectListItem>
+                 </items>
+            </List> -->
+    </Page>
+</mvc:View>
