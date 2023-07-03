@@ -45,3 +45,13 @@ More routes and target config with path var
 FragmentDefintion files and Fragment
 attachMatched to a Router
 Back Nav Button imple for routing
+
+28.Fragments
+Create and Display Fragment on run time 
+SelectDialog to display as popup. Using with Fragment to load data dynamically on click of supplier data and city input
+function().bind(this)- To attach this to point to controller in promise/callback
+Create Aggregation during run time.
+
+29.Fiori Arch
+Fragment- pass controller obj and id for the fragment to access controller methods and to avoid duplicate id.
+On select of something from fragment how to manipulate the orginal view data.

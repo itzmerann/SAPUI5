@@ -22,25 +22,25 @@ sap.ui.define([
         oSupplierPopup: null,
         oCityPopup: null,
         onFilter: function(){
-            //MessageToast.show("This functionality is under construction....")
+            //Storing the frag obj in global var to avoid creating it multiple times
             if(!this.oSupplierPopup){
                 Fragment.load({
                     name: "emc.fin.ar.fragments.popup"
                 })
-                //then is a promise, because UI5 Fragment module will be loading our 
-                //fragment asynchronously
+                //to point this to controller, bind it to callback func func(){}.bind(this)
                 .then(this.onCallBack.bind(this));
             }else{
+                //this.oSupplierPopup-will return Dialog..which has open method 
                 this.oSupplierPopup.open();
             }
         },
         onCallBack: function(oFragment){
             debugger;
-            //setting the global variable to avoid creation of object again and again
             this.oSupplierPopup = oFragment;
-            //Allow access to Immune system - Explicily allow resources (model) access to these fragments
+            //allow model access in the fragments
+            //add fragment to model
             this.getView().addDependent(this.oSupplierPopup);
-            //doing agg. binding to load all the data
+            //Dialog has items aggregation of card 1..n of type listItems
             this.oSupplierPopup.bindAggregation("items",{
                 path: '/suppliers',
                 template: new sap.m.StandardListItem({
