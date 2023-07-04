@@ -75,10 +75,10 @@ sap.ui.define([
             }
         },
         onConfirm: function(oEvent){
-            var sId = oEvent.getParameter("id");
+            var sId = oEvent.getParameter("id"); //get the fragment id
             debugger;
-            //differentiate between whether this event triggered for city or supplier
-            if(sId.indexOf("City") !== -1){
+            //differentiate between whether this event triggered for city or supplier using fragment id
+            if(sId.indexOf("City") !== -1){  //id contains City
                 var oSelectedItem = oEvent.getParameter("selectedItem");
                 var sCityName = oSelectedItem.getTitle();
                 this.inpField.setValue(sCityName);
@@ -95,6 +95,7 @@ sap.ui.define([
                     filters: aFilter,
                     and: false
                 });
+                //add the filter to 
                 this.getView().byId("idTable").getBinding("items").filter(oFilterFinal);
             }
             

@@ -53,5 +53,8 @@ function().bind(this)- To attach this to point to controller in promise/callback
 Create Aggregation during run time.
 
 29.Fiori Arch
+App-selecting city from popup and setting to city input..selecting supplier names from popup and filtering the table based on selected suppliernames.
 Fragment- pass controller obj and id for the fragment to access controller methods and to avoid duplicate id.
 On select of something from fragment how to manipulate the orginal view data.
+Central Hub and Embedded Arch--Gateway Fnd--Both are onprem where we develop Fiori app
+To build Fiori app using cloud BTP we will use cloud connector to establish network connection to either Central Hub/Embedded system 
