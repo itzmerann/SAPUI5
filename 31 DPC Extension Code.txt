@@ -1,0 +1,38 @@
+  method productset_get_entityset.
+
+    data: lt_products type table of bapi_epm_product_header,
+          lv_top      type i,
+          lv_skip     type i,
+          lv_total    type i,
+          ls_max_rows type bapi_epm_max_rows,
+          ls_entity   type zcl_zmar_2021_mpc=>ts_product.
+
+    lv_top =  is_paging-top.
+    lv_skip =  is_paging-skip.
+    lv_total = lv_top + lv_skip.
+    ls_max_rows-bapimaxrow = lv_total.
+
+
+    call function 'BAPI_EPM_PRODUCT_GET_LIST'
+      exporting
+        max_rows   = ls_max_rows                 " Maximum number of lines of hits
+      tables
+        headerdata = lt_products                 " EPM: Product header data of BOR object SEPM002
+*       selparamproductid     =                  " EPM: BAPI range table for product ids
+*       selparamsuppliernames =                  " EPM: BAPI range table for company names
+*       selparamcategories    =                  " EPM: Range table for product categories
+*       return     =                  " Return Parameter
+      .
+
+    if lv_total > 0.
+      loop at lt_products into data(ls_product) from lv_skip + 1 to lv_total.
+        move-corresponding ls_product to ls_entity.
+        append ls_entity to et_entityset.
+      endloop.
+    else.
+      move-corresponding lt_products to et_entityset.
+    endif.
+
+
+
+  endmethod.
