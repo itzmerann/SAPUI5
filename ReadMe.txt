@@ -74,3 +74,19 @@ growing and growingThreshold to control pagination
 Filter gets converted to odata call
 
 
+38.crudFiori
+app- we created add view and on click of button in view1 we show this and on submit we call odataModel.create
+we are showing popup with all supplier data like help drodown on click of supplier id in add view.
+showValueHelp and valueHelpRequest to show popup like to show all city
+
+Create-odatamodel.create("odata entityset endpoint",payload,callback funcs)
+eg.oDataModel.create("/ProductSet", payload, {})
+Get:
+ oDataModel.read("/ProductSet('" + this.productId + "')",{})
+Delete:
+oDataModel.remove("/ProductSet('" + this.productId + "')",{})
+Function call - also how to pass request paramters
+oDataModel.callFunction("/GetMostExpensiveProduct",{
+                urlParameters: {
+                    "I_CATEGORY": 'Notebooks'
+                }) 

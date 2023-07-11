@@ -43,6 +43,7 @@ sap.ui.define([
             var oDataModel = this.getView().getModel();
             //Step 3: Read single record from odata
             var that = this;
+            //success and error are callback funcs
             oDataModel.read("/ProductSet('" + this.productId + "')",{
                 success: function(data){
                     //Step 4: in Success call back populate my data - set local model
@@ -92,6 +93,10 @@ sap.ui.define([
                 }
             });
         },
+
+        //below 3 funcs used to create a show dialog popup kindof fragement on click of value help
+        //then once frag is ini then loading data using onCallBackCity()
+        //then once user selects a popup value we are setting it to input field valueusing confirm()
         inpField: null,
         oSupplierPopup: null,
         onSupplierF4: function(oEvent){
@@ -116,7 +121,7 @@ sap.ui.define([
             this.oSupplierPopup = oFragment;
             //Allow access to Immune system - Explicily allow resources (model) access to these fragments
             this.getView().addDependent(this.oSupplierPopup);
-            //doing agg. binding to load all the data
+            //doing agg. binding to load all the data//selectdialog has items aggre
             this.oSupplierPopup.bindAggregation("items",{
                 path: '/SupplierSet',
                 template: new sap.m.StandardListItem({
