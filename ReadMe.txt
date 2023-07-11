@@ -58,3 +58,13 @@ Fragment- pass controller obj and id for the fragment to access controller metho
 On select of something from fragment how to manipulate the orginal view data.
 Central Hub and Embedded Arch--Gateway Fnd--Both are onprem where we develop Fiori app
 To build Fiori app using cloud BTP we will use cloud connector to establish network connection to either Central Hub/Embedded system 
+
+
+37. OnPremConAndODataCall
+We will define odata model using datasource in manifest and define relative path of odata
+We will define approuter which is entry point of our app and html repo runtime Dependencies to run our app in server
+We will define routing in xs-app.json to route all odata path to destination and other paths to html repo
+npm init- to generate package.json
+npm install - to install node_module Dependencies defined in package.json
+approuter-https://blogs.sap.com/2020/04/03/sap-application-router/
+
