@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Table itemPress="onItemPress" items="{To_Orders}" id="idTable">
+        <headerToolbar>
+            <Toolbar>
+                <ToolbarSpacer></ToolbarSpacer>
+                <Button icon="sap-icon://filter" press="onFilter" tooltip="Filter Suppliers"></Button>
+            </Toolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <header><Text text="Order Id" /></header>
+            </Column>
+            <Column>
+                <header><Text text="Gross Amount" /></header>
+            </Column>
+            <Column minScreenWidth="Tablet">
+                <header><Text text="Tax Amount" /></header>
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+                <header><Text text="Currency" /></header>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem type="Navigation">
+                <cells>
+                    <Text text="{SO_ID} - {SO_ITEM_POS}" />
+                    <Text text="{GROSS_AMOUNT}" />
+                    <Text text="{TAX_AMOUNT}" />
+                    <Input value="{CURRENCY_CODE}" showValueHelp="true" valueHelpRequest="onF4Help" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</core:FragmentDefinition>
