@@ -13,9 +13,10 @@ sap.ui.define([
             this.oRouter.getRoute("detail").attachMatched(this.herculis, this);
         },
         herculis: function(oEvent){
+            //path variable/args will come as ProductSet('1001')
             var sPath = "/" + oEvent.getParameter("arguments").fruitId;
             MessageToast.show("Herculis is called Path is : " + sPath);
-            this.getView().bindElement(sPath);
+            this.getView().bindElement(sPath); //will go as /ProductSet('1001')
         },
         onBack: function(){
             this.getView().getParent().to("idView1");

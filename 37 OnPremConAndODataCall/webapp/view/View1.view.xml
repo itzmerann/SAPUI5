@@ -7,8 +7,10 @@
         <content>
             <!-- <Button press="onNext" text="Go to Next" /> -->
             <SearchField id="idSearch" search="onSearch" liveChange="onSearch"></SearchField>
-            <List id="idList" mode="SingleSelectMaster" selectionChange="onSelectionChange" delete="onDelete" 
+            <List id="idList" mode="SingleSelectMaster" selectionChange="onSelectionChange" delete="onDelete"            
             items="{path: '/ProductSet'}" growing="true" growingThreshold="10">
+            <!-- access odata service directly -->
+            
             <!-- ,
                 sorter: {
                     path : 'type',

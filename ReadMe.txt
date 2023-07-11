@@ -59,6 +59,9 @@ On select of something from fragment how to manipulate the orginal view data.
 Central Hub and Embedded Arch--Gateway Fnd--Both are onprem where we develop Fiori app
 To build Fiori app using cloud BTP we will use cloud connector to establish network connection to either Central Hub/Embedded system 
 
+approuter-https://blogs.sap.com/2020/04/03/sap-application-router/
+series -https://blogs.sap.com/2019/02/19/sap-cloud-platform-backend-service-overview-of-blogs/
+
 
 37. OnPremConAndODataCall
 We will define odata model using datasource in manifest and define relative path of odata
@@ -66,5 +69,8 @@ We will define approuter which is entry point of our app and html repo runtime D
 We will define routing in xs-app.json to route all odata path to destination and other paths to html repo
 npm init- to generate package.json
 npm install - to install node_module Dependencies defined in package.json
-approuter-https://blogs.sap.com/2020/04/03/sap-application-router/
+Get productset call
+growing and growingThreshold to control pagination
+Filter gets converted to odata call
+
 
