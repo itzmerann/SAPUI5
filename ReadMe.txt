@@ -78,6 +78,7 @@ Filter gets converted to odata call
 app- we created add view and on click of button in view1 we show this and on submit we call odataModel.create
 we are showing popup with all supplier data like help drodown on click of supplier id in add view.
 showValueHelp and valueHelpRequest to show popup like to show all city
+we can see all calls in network batch
 
 Create-odatamodel.create("odata entityset endpoint",payload,callback funcs)
 eg.oDataModel.create("/ProductSet", payload, {})
@@ -90,3 +91,14 @@ oDataModel.callFunction("/GetMostExpensiveProduct",{
                 urlParameters: {
                     "I_CATEGORY": 'Notebooks'
                 }) 
+
+Expand: As we need to tell fiori to load associated entityset we need to specify expand parameter.
+The associated entityset prop can be assessed via To_Supplier/name
+    this.getView().bindElement({
+                path: /ProductSet(''),
+                parameters : { expand : 'To_Supplier,To_Orders' }
+            });
+http://stcfin.st.com:8021/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/ProductSet('HT-1000')?$format=json&$expand=ToSupplier
+
+Filter: when we add filter options to odata binding it will call the endpoint with filetr auto
+

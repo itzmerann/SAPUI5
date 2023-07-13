@@ -7,6 +7,8 @@ sap.ui.define([
 ], function(BaseController, MessageBox, MessageToast, Fragment, Filter) {
     'use strict';
     return BaseController.extend("emc.fin.ar.controller.View2",{
+        //on click of selection on master page, it will route to this view 
+        //and it will call attachmethod and will bind the ProductSet('') and also its associated entitysets
         onInit: function(){
             this.oRouter = this.getOwnerComponent().getRouter();
             //We need a method which is triggered EVERYTIME route changes
