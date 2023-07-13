@@ -102,3 +102,9 @@ http://stcfin.st.com:8021/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/ProductSet('HT-1000
 
 Filter: when we add filter options to odata binding it will call the endpoint with filetr auto
 
+
+40.
+We create a catalog in which we can add a tile(will have info about our app like Id, s4 Hana deployment generated url).
+Then add tile to a group. Group will display as tab in launchpad. 
+Create role for the group and category. 
+People with that role will access the app 
