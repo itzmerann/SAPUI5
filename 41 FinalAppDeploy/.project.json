@@ -1,0 +1,6 @@
+{
+  "deploy": {
+    "destination": "CFN",
+    "name": "ZMARFIORIAPP"
+  }
+}
