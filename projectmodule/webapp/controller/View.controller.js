@@ -18,8 +18,8 @@ sap.ui.define([
                 Controller.prototype.onInit.apply(this);
 
                 //The models will be set to controller with key if specified.
-                this.getView().setModel(modelutil.createJSONModel("model/mockData/EmpMock1.json"))
-                this.getView().setModel(modelutil.createJSONModel("model/mockData/EmpMock2.json"),"mock2")
+                this.getView().setModel(modelutil.createJSONModel("../model/mockData/EmpMock1.json"))
+                this.getView().setModel(modelutil.createJSONModel("../model/mockData/EmpMock2.json"),"mock2")
 
                 //Diff ways to bind
                 this.getView().byId("mytextid2").bindValue("/empData/0/name")
