@@ -53,6 +53,8 @@ Create and Display Fragment on run time
 SelectDialog to display as popup. Using with Fragment to load data dynamically on click of supplier data and city input
 function().bind(this)- To attach this to point to controller in promise/callback
 Create Aggregation during run time.
+For dialog box to access view model - (this.getView().addDependent(this.oSupplierPopup);
+ 
 
 29.Fiori Arch
 App-selecting city from popup and setting to city input..selecting supplier names from popup and filtering the table based on selected suppliernames.
