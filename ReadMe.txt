@@ -22,6 +22,8 @@ Filter and Filter Options
 getBinding
 All event will have getParameter() athrough which we can pass the paramter name and gets its value and getParameter() which will return an object 
 which will have values...Each event can have diff set of params,refer sdk for it
+oList.getBinding("items").filter(oNewFilter);
+Olist.removeItem(obj)
 
 24.MasterDetail:
 App-Fruits on left screen and onclick fruit details on right screen by passing the item path and binding it to view element of view2.
